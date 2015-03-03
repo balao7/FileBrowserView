@@ -1,7 +1,7 @@
 Info
 ================
 I will edit the code and extend some funcctions, for better useage.
-
+For now it's not useful, to push it to a maven repo, because you need to change some code. If i have time, i will rewrite it, so you can use the library over a maven repo.
 
 FileBrowserView
 ================
