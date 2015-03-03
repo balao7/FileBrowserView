@@ -1,3 +1,8 @@
+Info
+================
+I will edit the code and extend some funcctions, for better useage.
+
+
 FileBrowserView
 ================
 
@@ -7,7 +12,7 @@ http://psaravan.github.io/FileBrowserView/
 
 <img src="http://psaravan.github.io/FileBrowserView/images/FileBrowserViewFramed2.png" height="480" width="283">
 
-Developed By
+Original Developed By
 ============
 
 Saravan Pantham - saravan.pantham@gmail.com
