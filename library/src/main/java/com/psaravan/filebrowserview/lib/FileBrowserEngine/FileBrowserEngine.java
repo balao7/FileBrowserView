@@ -55,6 +55,7 @@ public class FileBrowserEngine {
     public static final int FILE_GENERIC = 3;
     public static final int FOLDER = 4;
     public static final int FILE_TEXT = 5;
+    public static final int FILE_PDF = 6;
 
     //File size/unit dividers
     private final long KILOBYTES = 1024;
@@ -220,6 +221,12 @@ public class FileBrowserEngine {
 
                             //The file is a video file.
                             typesList.add(FILE_TEXT);
+                            sizesList.add("" + getFormattedFileSize(file.length()));
+
+                        } else if (getFileExtension(fileName).equalsIgnoreCase("pdf")) {
+
+                            //The file is a video file.
+                            typesList.add(FILE_PDF);
                             sizesList.add("" + getFormattedFileSize(file.length()));
 
                         } else {

@@ -102,27 +102,34 @@ public class GridLayoutAdapter extends AbstractFileBrowserAdapter {
          * row.
          */
        // if (mFileBrowserView.shouldShowItemIcons()) {
-            if (getTypesList().get(position)==FileBrowserEngine.FOLDER) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_folderblue);
-                convertView.setTag(R.string.type, FileBrowserEngine.FOLDER);
+        if (getTypesList().get(position) == FileBrowserEngine.FOLDER) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_folderblue);
+            convertView.setTag(R.string.type, FileBrowserEngine.FOLDER);
 
-            } else if (getTypesList().get(position)==FileBrowserEngine.FILE_AUDIO) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_mp3);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_AUDIO);
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_AUDIO) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_mp3);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_AUDIO);
 
-            } else if (getTypesList().get(position)==FileBrowserEngine.FILE_PICTURE) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_png);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_PICTURE);
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_PICTURE) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_png);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_PICTURE);
 
-            } else if (getTypesList().get(position)==FileBrowserEngine.FILE_VIDEO) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_avi);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_VIDEO);
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_VIDEO) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_avi);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_VIDEO);
 
-            } else {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_default);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_GENERIC);
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_TEXT) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_text);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_TEXT);
 
-            }
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_PDF) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_pdf);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_PDF);
+
+        } else {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_default);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_GENERIC);
+        }
 
        // }
 

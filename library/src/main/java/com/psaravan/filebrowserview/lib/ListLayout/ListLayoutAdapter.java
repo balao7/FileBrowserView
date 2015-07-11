@@ -130,10 +130,13 @@ public class ListLayoutAdapter extends AbstractFileBrowserAdapter {
             holder.fileFolderIcon.setImageResource(R.drawable.icon_text);
             convertView.setTag(R.string.type, FileBrowserEngine.FILE_TEXT);
 
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_PDF) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_pdf);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_PDF);
+
         } else {
             holder.fileFolderIcon.setImageResource(R.drawable.icon_default);
             convertView.setTag(R.string.type, FileBrowserEngine.FILE_GENERIC);
-
         }
 
         //}
