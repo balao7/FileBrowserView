@@ -70,14 +70,14 @@ public class ListLayoutAdapter extends AbstractFileBrowserAdapter {
             holder.rightSubText.setVisibility(View.INVISIBLE);
 
             //Show/hide any UI elements based on the user's preferences.
-            if (!mFileBrowserView.shouldShowItemSizes()) {
+            /*if (!mFileBrowserView.shouldShowItemSizes()) {
                 //Hide the item size TextViews.
                 ((View) holder.fileFolderSizeText.getParent()).setVisibility(View.GONE);
                 RelativeLayout.LayoutParams titleParams = (RelativeLayout.LayoutParams)
                         holder.fileFolderNameText.getLayoutParams();
                 titleParams.addRule(RelativeLayout.CENTER_VERTICAL);
                 holder.fileFolderNameText.setLayoutParams(titleParams);
-            }
+            }*/
 
             if (!mFileBrowserView.shouldShowOverflowMenus()) {
                 //Hide the overflow menus.
@@ -91,10 +91,10 @@ public class ListLayoutAdapter extends AbstractFileBrowserAdapter {
             }
 
             //Hide the icon if we have to.
-            if (!mFileBrowserView.shouldShowItemIcons())
+            /*if (!mFileBrowserView.shouldShowItemIcons())
                 holder.fileFolderIcon.setVisibility(View.GONE);
-            else
-                holder.fileFolderIcon.setVisibility(View.VISIBLE);
+            else*/
+            holder.fileFolderIcon.setVisibility(View.VISIBLE);
 
             convertView.setTag(holder);
         } else {
@@ -109,34 +109,34 @@ public class ListLayoutAdapter extends AbstractFileBrowserAdapter {
          * Also make sure to set the type of the item as a tag for this
          * row.
          */
-        if (mFileBrowserView.shouldShowItemIcons()) {
-            if (getTypesList().get(position)==FileBrowserEngine.FOLDER) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_folderblue);
-                convertView.setTag(R.string.type, FileBrowserEngine.FOLDER);
+        //if (mFileBrowserView.shouldShowItemIcons()) {
+        if (getTypesList().get(position) == FileBrowserEngine.FOLDER) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_folderblue);
+            convertView.setTag(R.string.type, FileBrowserEngine.FOLDER);
 
-            } else if (getTypesList().get(position)==FileBrowserEngine.FILE_AUDIO) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_mp3);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_AUDIO);
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_AUDIO) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_mp3);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_AUDIO);
 
-            } else if (getTypesList().get(position)==FileBrowserEngine.FILE_PICTURE) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_png);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_PICTURE);
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_PICTURE) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_png);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_PICTURE);
 
-            } else if (getTypesList().get(position)==FileBrowserEngine.FILE_VIDEO) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_avi);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_VIDEO);
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_VIDEO) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_avi);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_VIDEO);
 
-            } else if (getTypesList().get(position)==FileBrowserEngine.FILE_TEXT) {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_text);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_TEXT);
+        } else if (getTypesList().get(position) == FileBrowserEngine.FILE_TEXT) {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_text);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_TEXT);
 
-            } else {
-                holder.fileFolderIcon.setImageResource(R.drawable.icon_default);
-                convertView.setTag(R.string.type, FileBrowserEngine.FILE_GENERIC);
-
-            }
+        } else {
+            holder.fileFolderIcon.setImageResource(R.drawable.icon_default);
+            convertView.setTag(R.string.type, FileBrowserEngine.FILE_GENERIC);
 
         }
+
+        //}
 
         /*
          * We're gonna need a way to keep track of the file/folder path of each row.
@@ -162,26 +162,26 @@ public class ListLayoutAdapter extends AbstractFileBrowserAdapter {
     private PopupMenu.OnMenuItemClickListener menuItemClickListener =
             new PopupMenu.OnMenuItemClickListener() {
 
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
 
-                int id = item.getItemId();
-                if (id==R.id.copy) {
-                    //TODO Implement your copy functionality here.
-                } else if (id==R.id.paste) {
-                    //TODO Implement your paste functionality here.
-                } else if (id==R.id.move) {
-                    //TODO Implement your move functionality here.
-                } else if (id==R.id.rename) {
-                    //TODO Implement your rename functionality here.
-                } else if (id==R.id.delete) {
-                    //TODO Implement your delete functionality here.
+                    int id = item.getItemId();
+                    if (id == R.id.copy) {
+                        //TODO Implement your copy functionality here.
+                    } else if (id == R.id.paste) {
+                        //TODO Implement your paste functionality here.
+                    } else if (id == R.id.move) {
+                        //TODO Implement your move functionality here.
+                    } else if (id == R.id.rename) {
+                        //TODO Implement your rename functionality here.
+                    } else if (id == R.id.delete) {
+                        //TODO Implement your delete functionality here.
+                    }
+
+                    return false;
                 }
 
-                return false;
-            }
-
-    };
+            };
 
     private View.OnClickListener overflowClickListener = new View.OnClickListener() {
 

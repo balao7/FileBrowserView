@@ -51,9 +51,10 @@ public class DialogFragment extends android.app.DialogFragment {
         mFileBrowserView.setFileBrowserLayoutType(FileBrowserView.FILE_BROWSER_LIST_LAYOUT) //Set the type of view to use.
                 .setDefaultDirectory(new File("/")) //Set the default directory to show.
                 .setShowHiddenFiles(true) //Set whether or not you want to show hidden files.
-                .showItemSizes(true) //Shows the sizes of each item in the list.
+                .setShowOnlyDirs(false)
+                //.showItemSizes(true) //Shows the sizes of each item in the list.
                 .showOverflowMenus(false) //Shows the overflow menus for each item in the list.
-                .showItemIcons(true) //Shows the icons next to each item name in the list.
+                //.showItemIcons(true) //Shows the icons next to each item name in the list.
                 .setNavigationInterface(navInterface); //Sets the nav interface instance for this view.
 
 

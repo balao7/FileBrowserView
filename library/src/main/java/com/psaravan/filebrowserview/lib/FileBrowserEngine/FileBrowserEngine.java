@@ -146,7 +146,7 @@ public class FileBrowserEngine {
                             sizesList.add("Unknown items");
                         }
 
-                    } else {
+                    } else if(!file.isDirectory() && !mFileBrowserView.shouldShowOnlyDirs()) {
 
                         try {
                             String path = file.getCanonicalPath();

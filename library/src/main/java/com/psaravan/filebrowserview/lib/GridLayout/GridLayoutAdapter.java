@@ -62,14 +62,14 @@ public class GridLayoutAdapter extends AbstractFileBrowserAdapter {
             holder.overflowButton = (ImageButton) convertView.findViewById(R.id.gridViewOverflowButton);
 
             //Show/hide any UI elements based on the user's preferences.
-            if (!mFileBrowserView.shouldShowItemSizes()) {
+            /*if (!mFileBrowserView.shouldShowItemSizes()) {
                 //Hide the item size TextViews.
                 ((View) holder.fileFolderSizeText.getParent()).setVisibility(View.GONE);
                 RelativeLayout.LayoutParams titleParams = (RelativeLayout.LayoutParams)
                         holder.fileFolderNameText.getLayoutParams();
                 titleParams.addRule(RelativeLayout.CENTER_VERTICAL);
                 holder.fileFolderNameText.setLayoutParams(titleParams);
-            }
+            }*/
 
             if (!mFileBrowserView.shouldShowOverflowMenus()) {
                 //Hide the overflow menus.
@@ -83,9 +83,9 @@ public class GridLayoutAdapter extends AbstractFileBrowserAdapter {
             }
 
             //Hide the icon if we have to.
-            if (!mFileBrowserView.shouldShowItemIcons())
+           /* if (!mFileBrowserView.shouldShowItemIcons())
                 holder.fileFolderIcon.setVisibility(View.GONE);
-            else
+            else*/
                 holder.fileFolderIcon.setVisibility(View.VISIBLE);
 
             convertView.setTag(holder);
@@ -101,7 +101,7 @@ public class GridLayoutAdapter extends AbstractFileBrowserAdapter {
          * Also make sure to set the type of the item as a tag for this
          * row.
          */
-        if (mFileBrowserView.shouldShowItemIcons()) {
+       // if (mFileBrowserView.shouldShowItemIcons()) {
             if (getTypesList().get(position)==FileBrowserEngine.FOLDER) {
                 holder.fileFolderIcon.setImageResource(R.drawable.icon_folderblue);
                 convertView.setTag(R.string.type, FileBrowserEngine.FOLDER);
@@ -124,7 +124,7 @@ public class GridLayoutAdapter extends AbstractFileBrowserAdapter {
 
             }
 
-        }
+       // }
 
         /*
          * We're gonna need a way to keep track of the file/folder path of each row.

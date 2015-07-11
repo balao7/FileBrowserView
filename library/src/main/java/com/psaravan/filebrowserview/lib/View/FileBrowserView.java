@@ -62,10 +62,13 @@ public class FileBrowserView extends FrameLayout {
     //Flag to show/hide hidden files.
     private boolean mShowHiddenFiles = false;
 
+    //Flag to show/hide files (show only directories).
+    private boolean mShowOnlyDirs = false;
+
     //Flags to display individual item attributes in the default adapter view.
     private boolean mShowOverflowMenus = true;
-    private boolean mShowItemSizes = true;
-    private boolean mShowIcons = true;
+    //private boolean mShowItemSizes = true;
+    //private boolean mShowIcons = true;
 
     //Layout type constants.
     public static final int FILE_BROWSER_LIST_LAYOUT = 0;
@@ -209,6 +212,11 @@ public class FileBrowserView extends FrameLayout {
         return this;
     }
 
+    public FileBrowserView setShowOnlyDirs(boolean show) {
+        mShowOnlyDirs = show;
+        return this;
+    }
+
     /**
      * Sets whether or not the overflow menu should be shown or not (defaults to true). Note that
      * this method will have no effect if you use your own adapter via
@@ -236,10 +244,10 @@ public class FileBrowserView extends FrameLayout {
      * @param show Whether or not the item sizes should be shown.
      * @return An instance of this FileBrowserView to allow method chaining.
      */
-    public FileBrowserView showItemSizes(boolean show) {
+    /*public FileBrowserView showItemSizes(boolean show) {
         mShowItemSizes = show;
         return this;
-    }
+    }*/
 
     /**
      * Sets whether or not each file/folder's icon should be displayed next to the name (defaults
@@ -249,10 +257,10 @@ public class FileBrowserView extends FrameLayout {
      * @param show Whether or not the icon should be shown.
      * @return An instance of this FileBrowserView to allow method chaining.
      */
-    public FileBrowserView showItemIcons(boolean show) {
+    /*public FileBrowserView showItemIcons(boolean show) {
         mShowIcons = show;
         return this;
-    }
+    }*/
 
     /**
      * @param navInterface The navigation interface to assign to this view.
@@ -337,6 +345,13 @@ public class FileBrowserView extends FrameLayout {
     }
 
     /**
+     * @return show only dirs or not.
+     */
+    public boolean shouldShowOnlyDirs() {
+        return mShowOnlyDirs;
+    }
+
+    /**
      * @return The file browser engine instance for this view.
      */
     public FileBrowserEngine getFileBrowserEngine() {
@@ -389,19 +404,19 @@ public class FileBrowserView extends FrameLayout {
      *         The returned value has no effect if you are using a custom adapter via
      *         {@link #setCustomAdapter(AbstractFileBrowserAdapter)}.
      */
-    public boolean shouldShowItemSizes() {
+    /*public boolean shouldShowItemSizes() {
         return mShowItemSizes;
-    }
+    }*/
 
     /**
      * @return Whether or not each individual item's icon should be displayed in the AbsListView.
      *         The returned value has no effect if you are using a custom adapter via
      *         {@link #setCustomAdapter(AbstractFileBrowserAdapter)}.
      */
-    public boolean shouldShowItemIcons() {
+    /*public boolean shouldShowItemIcons() {
         return mShowIcons;
 
-    }
+    }*/
 
     /**
      * @return Whether tabbed browsing is enabled or not for this FileBrowserView instance.

@@ -52,9 +52,10 @@ public class TabbedListActivity extends Activity {
         mFileBrowserView.setFileBrowserLayoutType(FileBrowserView.FILE_BROWSER_LIST_LAYOUT) //Set the type of view to use.
                         .setDefaultDirectory(Environment.getExternalStorageDirectory()) //Set the default directory to show.
                         .setShowHiddenFiles(true) //Set whether or not you want to show hidden files.
-                        .showItemSizes(true) //Shows the sizes of each item in the list.
+                        .setShowOnlyDirs(false)
+                        //.showItemSizes(true) //Shows the sizes of each item in the list.
                         .showOverflowMenus(true) //Shows the overflow menus for each item in the list.
-                        .showItemIcons(true) //Shows the icons next to each item name in the list.
+                        //.showItemIcons(true) //Shows the icons next to each item name in the list.
                         .setNavigationInterface(navInterface) //Sets the nav interface instance for this view.
                         .enableTabbedBrowsing(true) //Enable tabbed browsing.
                         .init(); //Loads the view. You MUST call this method, or the view will not be displayed.
